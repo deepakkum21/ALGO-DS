@@ -22,7 +22,7 @@ class MinBinaryHeap {
     }
 	
 	extractMin(){
-		const max = this.values[0];
+		const min = this.values[0];
 		const end = this.values.pop();
 		
 		if(this.values.length >  0 ) {
@@ -30,7 +30,7 @@ class MinBinaryHeap {
 			this.sinkDown();
 		}
 		
-		return max;
+		return min;
 	}
 	
 	sinkDown() {
