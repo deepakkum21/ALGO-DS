@@ -1,0 +1,8 @@
+use queue for storing max
+while hiting the 1st window add each no to the queue
+    condition :- 1. if the no adding to queue is larger than the no present ahead pop those no to the queue 
+                 2. if the no is smaller than the no present ahead then simply add that no to the queue
+in this way the larger no will always be present at index 0 
+when moving the window check if the no removed from the window is the no at 0 index of the queue then remove from the queue
+if not then keep as it is 
+when adding the no in the window follow the condition mentioned above in conditions.

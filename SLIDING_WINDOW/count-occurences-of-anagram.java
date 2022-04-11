@@ -11,5 +11,5 @@
 // for each letter in window decrement the letter count for each letter found in
 // the window
 // if count of each letter is 0 then anagram found
-// if letter is removed from window do -1 in angarm object and if add then
-// increment in angram object
+// if letter is removed from window do -\+1 in angarm object and if add then
+// -1 in angram object
