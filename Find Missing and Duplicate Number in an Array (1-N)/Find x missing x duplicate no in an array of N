@@ -1,0 +1,22 @@
+
+// concept is called SWAP & SORT doesn't work if array is readonly O(n)
+int i=j=0;
+while(i < n) {
+    if(arr[i] != arr[arr[i]-1]) {
+        // swap sort
+        temp = arr[i]
+        arr[i] = arr[arr[i]-1]
+        arr[arr[i]-1] = temp
+    }
+    else {
+        i++
+    }
+}
+
+// find missing and dup no
+for(int i=0; i < n; i++) {
+    if(i != arr[i]-1){
+        dup_no = arr[i]
+        missing_no = arr[i]-1
+    }
+}
