@@ -1,0 +1,29 @@
+int i=j=0;
+int max = Math.MIN_VALUE;
+while(j < s.length ) {
+	map[s[j]]++;
+
+    
+    // this condition will not come as map size cannot be greater than window as will same as map size
+	if(map.size() > k) {
+		j++;
+	}
+
+	else if(map.size() == k) {
+		max = Math.max(max, j-i+1);
+		j++;
+	}
+
+    // if map size is less than window size
+	else if(map.size() < k) {
+		while(map.size() < k) {
+			map[s[i]]--;
+			if(map[s[i]==0) {
+				map.remove[s[i]];
+			}
+			i++
+		}
+		j++;
+	}
+}
+return max;

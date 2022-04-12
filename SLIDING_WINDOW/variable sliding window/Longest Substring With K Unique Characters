@@ -2,3 +2,29 @@
 // count will be used to see whether all char of that type is removed or not 
 
 // 3 conditions  as per general form
+
+int i=j=0;
+int max = Math.MIN_VALUE;
+while(j < s.length ) {
+	map[s[j]]++;
+	if(map.size() < k) {
+		j++;
+	}
+
+	else if(map.size() == k) {
+		max = Math.max(max, j-i+1);
+		j++;
+	}
+
+	else if(map.size() > k) {
+		while(map.size() > k) {
+			map[s[i]]--;
+			if(map[s[i]==0) {
+				map.remove[s[i]];
+			}
+			i++
+		}
+		j++;
+	}
+}
+return max;
