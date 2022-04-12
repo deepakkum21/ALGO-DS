@@ -1,0 +1,14 @@
+sum of N array = sum of N array -(dupl_no) + (miss_no)    --------- 1
+sum of sq of N array = sum of sq N array -sq(dupl_no) + sq(miss_no)  ------ 2
+
+
+divide 1 and 2 equations 
+
+constant1/constant2 =  (miss_no*miss_no -dupl_no*dupl_no) / (miss_no -dupl_no)
+constant1/constant2 =  (miss_no -dupl_no)(miss_no +dupl_no) / (miss_no -dupl_no)
+constant1/constant2 =  (miss_no -dupl_no)(miss_no +dupl_no) / (miss_no -dupl_no)
+constant3 = (miss_no +dupl_no) ------- 3
+
+add eq 1 and 3
+will get miss_no 
+and from their get dupl_no
