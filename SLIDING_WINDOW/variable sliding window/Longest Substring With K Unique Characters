@@ -1,0 +1,4 @@
+// use map to store the unique char and their count
+// count will be used to see whether all char of that type is removed or not 
+
+// 3 conditions  as per general form
