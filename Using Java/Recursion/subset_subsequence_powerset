@@ -1,0 +1,16 @@
+
+// subset or subsequence or powerset
+void solve(int io; int op) {
+	if(io.length ==1) {
+		print(op)
+		return
+	}
+	
+	res1 = op;
+	res2 = op + io.charAt[0];
+	newIO = io.substring(1);
+	solve(newIO, res1)
+	solve(newIO, res2)
+}
+
+// if no repetition then use set to store the result
