@@ -1,0 +1,9 @@
+void solve (int source, int dest, int helper, int n){
+	if(n==1){
+		print(moving plate n from s to d)
+		return;
+	}
+	solve(source, helper, dest, n-1);
+	print(moveing from s to d);
+	solve(helper, dest, source, n-1);
+}
