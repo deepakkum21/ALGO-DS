@@ -1,0 +1,14 @@
+void solve(int io, int op) {
+	if(io.length ==0) {
+		print(op)
+		return
+	}
+	
+	res1 = op = "_";
+	res1 = res + io.charAt[0];
+	res2 = op + io.charAt[0];
+	newIO = io.substring(1);
+	solve(newIO, res1)
+	solve(newIO, res2)
+	return;
+}
