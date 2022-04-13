@@ -1,7 +1,7 @@
 
 // subset or subsequence or powerset
 void solve(int io; int op) {
-	if(io.length ==1) {
+	if(io.length ==0) {
 		print(op)
 		return
 	}
