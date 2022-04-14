@@ -1,0 +1,25 @@
+// https://www.youtube.com/watch?v=U81n0UYtk98&list=PL_z_8CaSLPWeT1ffjiImo0sYTcnLzo-wY&index=18
+
+
+int ones = 0;
+int zeros = 0;
+
+solve(ones,zeros, n, "");
+
+void solve(int ones, int zeros, int n, string op) {
+	if(n ==0 ) {
+		print(op);
+		return;
+	}
+	
+	// for 1's
+	op1 = op+"1";
+	solve(ones+1,zeros, n-1, op1);
+	
+	// for 0's when count of 1 > count of 0
+	if(ones>zeros) {
+		op2 = op+"0";
+		solve(ones,zeros+1, n-1, op2);
+	}
+	return;
+}
