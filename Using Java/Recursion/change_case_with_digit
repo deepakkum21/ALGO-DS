@@ -1,8 +1,7 @@
 // io => a1B
 // output => a1B, A1B, a1b, A1b
 
-void solve(string io, string op) {
-    Stack<String> opStack = new Stack<String>();
+void solve(string io, string op, Stack<String> opStack) {
 	if(io.length ==0) {
 		opStack.push(op);
 		return
