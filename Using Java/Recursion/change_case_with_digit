@@ -1,0 +1,27 @@
+// io => a1B
+// output => a1B, A1B, a1b, A1b
+
+void solve(string io, string op, Stack opStack) {
+	if(io.length ==0) {
+		opStack.push(op);
+		return
+	}
+	
+	// if char is digit
+	if(io.charAt[0].isDigit()) {
+		op = op+io.substring(0,1);
+		io = io.substring(1);
+		solve(io,op, opStack); 
+	}
+	
+	// the cahr at 0 is alpha
+	else {
+		String s = io.substring(0,1);
+		String op1 = op+s.toUppercase();
+		String op2 = op+s.toLowercasse();
+		io = io.substring(1);
+		solve(io,op1, opStack);
+		solve(io,op2, opStack);
+	}
+	return;
+}
