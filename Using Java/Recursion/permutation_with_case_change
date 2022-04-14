@@ -1,7 +1,7 @@
 // input = ab
 // output = ab,aB,Ab,AB
 
-void solve(int io, int op) {
+void solve(string io, string op) {
 	if(io.length ==0) {
 		print(op)
 		return
