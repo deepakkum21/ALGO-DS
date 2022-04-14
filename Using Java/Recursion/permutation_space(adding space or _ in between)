@@ -4,7 +4,7 @@ void solve(int io, int op) {
 		return
 	}
 	
-	res1 = op = "_";
+	res1 = op + "_";
 	res1 = res + io.charAt[0];
 	res2 = op + io.charAt[0];
 	newIO = io.substring(1);
