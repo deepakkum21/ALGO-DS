@@ -1,0 +1,15 @@
+
+index = 0;
+k = k-1;
+solve(int arr[], int k, index, ans) {
+	if(arr.length ==1) {
+		ans = arr[0]
+		return;
+	}
+	
+	index = (index+k) % arr.length;
+	
+	remove the index element from arr
+	
+	solve(arr, k, index, ans)
+}
