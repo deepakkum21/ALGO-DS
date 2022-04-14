@@ -1,0 +1,27 @@
+
+int openCount = n;
+int closeCount = n;
+
+solve(openCount,closeCount, "", new Stack<String>());
+
+void solve(int openCount, int closeCount, string op, Stack opStack) {
+	if(openCount ==0 & closeCount==0) {
+		opStack.push(op);
+		return
+	}
+	
+	// if openCount has not ended
+	if(openCount !=0) {
+		op = op+"(";
+		solve(openCount-1, closeCount, op, opStack); 
+	}
+	
+	// there will be two options for close one
+	else {
+		op1 = op + ")";
+		op2 = op + "(";
+		solve(openCount, closeCount -1, op1, opStack);
+		solve(openCount, closeCount -1, op2, opStack);
+	}
+	return;
+}
