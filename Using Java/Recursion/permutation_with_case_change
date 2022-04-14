@@ -1,0 +1,17 @@
+// input = ab
+// output = ab,aB,Ab,AB
+
+void solve(int io, int op) {
+	if(io.length ==0) {
+		print(op)
+		return
+	}
+	
+	res1 = op;
+	res1 = res + io.substring(0,1).toUppercase();
+	res2 = op + io.substring(0,1);
+	newIO = io.substring(1);
+	solve(newIO, res1)
+	solve(newIO, res2)
+	return;
+}
