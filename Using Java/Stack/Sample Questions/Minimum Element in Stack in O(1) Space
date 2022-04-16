@@ -1,0 +1,91 @@
+Design a Data Structure SpecialStack that supports all the stack operations like push(), pop(), isEmpty(), isFull()
+and an additional operation getMin() which should return minimum element from the SpecialStack.
+All these operations of SpecialStack must be O(1). To implement SpecialStack, you should only use standard Stack
+data structure and no other data structure like arrays, list, .. etc.
+
+Consider the following SpecialStack
+16 --> TOP
+15
+29
+19
+18
+
+When getMin() is called it should return 15,
+which is the minimum element in the current stack.
+
+If we do pop two times on stack, the stack becomes
+29 --> TOP
+19
+18
+
+When getMin() is called, it should return 18
+which is the minimum in the current stack.
+
+================================================================================================================================
+// O(1) means use only variables no DS
+
+int min = Math.MIN_VALUE;
+stackEl;
+
+getMin() {
+
+    if(stackEl.size()==0) {
+        return -1;
+    }
+
+    return min;
+
+}
+
+push(int el) {
+
+    if(stackEl.size()==0) {
+        stackEl.push(el);
+        min = el;
+    }
+
+    else {
+        if(el >= min) {
+            stackEl.push(el);
+        }
+        else if(el < min) {
+            stackEl.push(2*el - min);
+            min = el;
+        }
+    }
+
+}
+
+pop() {
+
+    if(stackEl.size()==0) {
+        return -1;
+    }
+
+    if(stackEl.top() >= min) {
+        return stack.pop();
+    }
+
+    else if(stackEl.top() < min) {
+        min = 2*min -stack.top();
+        stackEl.pop();
+    }
+
+}
+
+top() {
+
+    if(stackEl.size()==0) {
+        return -1;
+    }
+
+    if(stackEl.top() >= min) {
+        return stack.top();
+    }
+
+    else if(stackEl.top() < min) {
+        top = 2*min -stack.top();
+        return top;
+    }
+
+}
