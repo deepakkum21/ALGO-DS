@@ -1,0 +1,55 @@
+// https://www.geeksforgeeks.org/next-greater-element/
+// https://www.youtube.com/watch?v=NXOOYYwpbg4&list=PL_z_8CaSLPWdeOezg68SKkeLN4-T_jNHd&index=2
+For the input array [4, 5, 2, 25], the next greater elements for each element are as follows.
+Element       NGE
+   4      -->   5
+   5      -->   25
+   2      -->   25
+   25     -->   -1
+
+   Element        NGE
+   13      -->    -1
+   7       -->     12
+   6       -->     12
+   12      -->     -1
+
+if 2nd loop goes from 
+j -> i to 0    
+j -> 0 to i
+j -> i to n
+j -> n to i
+
+use stack to
+
+List<int> list = new ArrayList<>
+for(int i=arr.length; i>0; i--) {
+    if(stack.size()==0) {
+        list.add(-1);
+    }
+
+    else if(arr[i] < stack.top() && stack.size() > 0) {
+        list.add(stack.top());
+    }
+
+    else if(arr[i] >= stack.top() && stack.size() > 0) {
+        while(stack.size() > 0 && arr[i] >= stack.top()) {
+            stack.pop();
+        }
+
+        if(stack.size()==0) {
+            list.add(-1);
+        }
+        else {
+            list.add(stack.top());
+        }
+    }
+
+    stack.push(arr[i]);
+}
+
+
+now reverse the list
+
+
+
+// for left we will traverse from left
