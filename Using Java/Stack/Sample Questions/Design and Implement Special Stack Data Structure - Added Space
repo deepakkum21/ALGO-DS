@@ -1,0 +1,60 @@
+Design a Data Structure SpecialStack that supports all the stack operations like push(), pop(), isEmpty(), isFull() 
+and an additional operation getMin() which should return minimum element from the SpecialStack. 
+All these operations of SpecialStack must be O(1). To implement SpecialStack, you should only use standard Stack data structure 
+and no other data structure like arrays, list, . etc. 
+
+Consider the following SpecialStack
+16  --> TOP
+15
+29
+19
+18
+
+When getMin() is called it should 
+return 15, which is the minimum 
+element in the current stack. 
+
+If we do pop two times on stack, 
+the stack becomes
+29  --> TOP
+19
+18
+
+When getMin() is called, it should 
+return 18 which is the minimum in 
+the current stack.
+
+------------------------------------------------------------------------------------------------
+implement 3 functions getMin(), pushEl(), popEl()
+use 2 stack one for normal pushing elements and other for pushing minimum
+
+stackEl;
+stackMin;
+pushEl(int el) { 
+    stackEl.push(el);
+
+    if(stackMin.size() ==0 || stackEl.top() >= el) {
+        stackMin.push(el);
+    }
+}
+
+pop() { 
+     popedEl = stackEl.top();
+     stackEl.pop();
+
+     if(popedEl == stackMin.top()) {
+         stackMin.pop();
+     }
+}
+
+getMin() { 
+    if(stackEl.size()==0) {
+        return -1;
+    }
+
+    if(stackMin.size() ==0) {
+        return 0;
+    }
+
+    return stackMin.top();
+}
