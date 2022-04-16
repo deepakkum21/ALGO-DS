@@ -1,0 +1,16 @@
+Given a binary matrix, find the maximum size rectangle binary-sub-matrix with all 1’s.
+https://www.youtube.com/watch?v=St0Jf_VmG_g&list=PL_z_8CaSLPWdeOezg68SKkeLN4-T_jNHd&index=8
+Example:
+
+Input :   0 1 1 0
+          1 1 1 1
+          1 1 1 1
+          1 1 0 0
+
+Output :  1 1 1 1
+          1 1 1 1
+
+// break down in MAH(Maximum histogram problem) for each row
+// if 2d is of nXm
+// start from 1XM , 2Xm ......... nXm and find MAH for each
+// then find max in them         
