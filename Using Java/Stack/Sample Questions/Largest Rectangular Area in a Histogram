@@ -1,0 +1,11 @@
+Find the largest rectangular area possible in a given histogram where the largest rectangle can be made of a number of contiguous bars. For simplicity, assume that all bars have same width and the width is 1 unit. 
+For example, consider the following histogram with 7 bars of heights {6, 2, 5, 4, 5, 1, 6}. The largest possible rectangle possible is 12 (see the below figure, the max area rectangle is highlighted in red)
+
+// https://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+// https://www.youtube.com/watch?v=J2X70jj_I1o&list=PL_z_8CaSLPWdeOezg68SKkeLN4-T_jNHd&index=7
+
+steps:- 
+1. first perform NSR by INDEX => save in ListRight
+2. first perform NSL by INDEX => save in listLeft
+3. Area[i] = arr[i] * (ListRight[i] - listLeft[2] - 1)
+4. then find max from Area array
