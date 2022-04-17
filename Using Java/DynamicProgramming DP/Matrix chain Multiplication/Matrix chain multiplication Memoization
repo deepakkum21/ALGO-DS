@@ -16,6 +16,7 @@ solve(int arr[], int i, int j) {
 
         ans = min(tem, ans);
     }
+    
     mat[i][j] = ans;
     return ans;
 
