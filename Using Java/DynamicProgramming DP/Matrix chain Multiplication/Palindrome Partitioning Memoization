@@ -29,3 +29,16 @@ solveMCM(String str, int i, int j) {
     mat[i][j] = ans;
     return ans;
 }
+
+
+isPalindrome(String str, int i, int j) {
+    if(i==j || i> j) return false;
+
+    while(i<j) {
+        if(str[i] != str[j]) retun false;
+
+        i++;
+        j--;
+    }
+    return true;
+}
