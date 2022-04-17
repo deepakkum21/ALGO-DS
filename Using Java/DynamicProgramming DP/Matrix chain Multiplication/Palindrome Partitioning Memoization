@@ -1,0 +1,31 @@
+Palindrome Partitioning Memoization
+
+====================================================
+
+
+declare mat[arr.length][arr.length]
+and initialize with -1 in every cell of mat
+
+solveMCM(String str, int i, int j) {
+
+    if(mat[i][j]!= -1) {
+        return mat[i][j];
+    }
+
+    if(i>=j || isPalindrome(str, i, j)) {
+        return 0;
+    }
+
+    for(int k=i; k < j-1; k++) {
+        tempAns = solveMCM(str,i,k) 
+                     + 
+                  solveMCM(str,k+1,j)
+                  + 1;
+        
+
+        ans = max(ans, tempAns)  // max or something else will depend on question
+    }
+
+    mat[i][j] = ans;
+    return ans;
+}
