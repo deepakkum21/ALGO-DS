@@ -23,7 +23,7 @@ solveMCM(String str, int i, int j) {
                   + 1;
         
 
-        ans = max(ans, tempAns)  // max or something else will depend on question
+        ans = min(ans, tempAns)  
     }
 
     mat[i][j] = ans;
