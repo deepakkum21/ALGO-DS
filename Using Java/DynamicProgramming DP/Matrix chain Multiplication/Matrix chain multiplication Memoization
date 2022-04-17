@@ -1,0 +1,22 @@
+Matrix chain multiplication Memoization
+
+===========================================
+
+declare mat[arr.length][arr.length]
+and initialize with -1 in every cell of mat
+
+solve(int arr[], int i, int j) {
+
+    if(mat[i][j]!= -1) {
+        return mat[i][j];
+    }
+
+    for(int k=i; k<=j-1; k++) {
+        temp = solve(arr, i, k) + solve(arr, k+1, j) + (arr[i-1] * arr[k] * arr[j]);
+
+        ans = min(tem, ans);
+    }
+    mat[i][j] = ans;
+    return ans;
+
+}
