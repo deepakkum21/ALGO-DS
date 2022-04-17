@@ -7,6 +7,10 @@ and initialize with -1 in every cell of mat
 
 solve(int arr[], int i, int j) {
 
+    if(i >= j) {
+        return 0;
+    }
+
     if(mat[i][j]!= -1) {
         return mat[i][j];
     }
@@ -16,7 +20,7 @@ solve(int arr[], int i, int j) {
 
         ans = min(tem, ans);
     }
-    
+
     mat[i][j] = ans;
     return ans;
 
