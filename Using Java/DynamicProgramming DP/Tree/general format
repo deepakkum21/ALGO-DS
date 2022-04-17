@@ -1,0 +1,16 @@
+solve(Node root, int result) {
+    if(root == null) {
+        return 0;
+    }
+
+    left = solve(root.left, res);
+    right = solve(root.right, res);
+
+    temp = max(left, right) +1;  // depend on question
+    ans = max(temp ,
+             left+right+1); // depend on question
+
+    res = max(temp, ans) ;
+
+    return temp;
+}
