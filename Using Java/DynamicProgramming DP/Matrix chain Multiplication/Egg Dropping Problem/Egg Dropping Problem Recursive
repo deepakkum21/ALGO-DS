@@ -30,7 +30,7 @@ solve(int egg, int floor) {
     for(int k=1; k<=floor; k++) {
 
         temp = 1 + 
-                max (solve(egg-1, floor-1) // if egg breaks so try from 1 floor Down
+                max (solve(egg-1, k-1) // if egg breaks so try from 1 floor Down
                 , solve(egg, floor-k))  // if egg doesn't break
 
 
