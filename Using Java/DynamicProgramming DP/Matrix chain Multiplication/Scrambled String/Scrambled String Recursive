@@ -63,7 +63,10 @@ solve(String a, String b) {
                                 &&
                              solve(a.substring(i, len), b.substring(i, len)) == true                 
 
-        if(condition1 && condition2) flag= true;
+        if(condition1 && condition2) {
+            flag= true;
+            break;
+        }
     }
     return flag;
 }
