@@ -1,0 +1,41 @@
+create mat[egg][floor] and initialize with -1
+
+solve(int egg, int floor) {
+
+    if(egg == 1) {
+        return floor;
+    }
+
+    if(floor==0 || floor ==1) {
+        return floor;
+    }
+
+    if(mat[egg][floor] != -1) {
+        return mat[egg][floor];
+    }
+
+    for(int k=1; k<=floor; k++) {
+
+        if(mat[egg-1][k-1] != -1) {
+            eggBeaked = mat[egg-1][k-1]
+        }
+        else {
+            eggBeaked = solve(egg-1, floor-1)
+        }
+
+        if(mat[egg][floor-k] != -1) {
+            eggNotBeaked = mat[egg][floor-k];
+        }
+        else {
+            eggNotBeaked = solve(egg, floor-k)
+        }
+
+        temp = 1 +max(eggBeaked, eggNotBeaked)
+
+
+        ans = min (temp, ans);
+    }
+
+    mat[egg][floor] = ans;
+    return ans;
+}
