@@ -1,0 +1,86 @@
+Partition problem is to determine whether a given set can be partitioned into two subsets such that the sum of elements in both subsets is same.
+Examples:
+
+arr[] = {1, 5, 11, 5}
+Output: true
+The array can be partitioned as {1, 5, 5} and {11}
+
+===========================================================
+
+things to notice:-
+
+---
+
+1. If we have to partition in 2 subset then the sum of all the elements in array should be even
+   because odd sum partition in two equal parts is not possible.
+2. if one can find wheather sum/2 is present in one of the partition then by default the other equal half will there.
+   so 1st half can be find using "subset sum problem"
+
+for(int i=0; i<arr.length-1; i++ ) {
+sum+=arr[i];
+}
+
+if(sum%2!=0) {
+return false;
+}
+
+else {
+
+    // call subset sum problem
+    subSetSum(arr, sum/2, arr.length)
+
+}
+
+subSetSum(int[] no, int totSumToGet, int n) {
+
+    create mat[n+1][totSumToGet+1];
+
+    if(i =;i<n+1; i++) {
+
+        if(j=0;j<totSumToGet+1; j++) {
+            // if an elemnt is not there but sum to get is >0 then false means not possible
+            if(i==0) {
+                mat[i][j] = false;
+            }
+
+            // if an elemnt is there but sum to get is 0 then ture means possible
+            if(j==0) {
+                mat[i][j] = true;
+            }
+        }
+    }
+
+    solve(int[] no, int totSumToGet, int n) {
+
+        if (totSumToGet == 0)
+                return true;
+
+        if (n <= 0)
+                return false;
+
+        if(mat[n][totSumToGet] != -1) {
+            return mat[n][totSumToGet];
+        }
+
+        if(no[n-1]<=sacWt) {
+            // then we have two options either to include the  n-1 element or not
+
+            // if element added
+            profit1 =  (solve(no, totSumToGet-wt[n-1], n-1));
+
+            // if not included the element
+            profit2 =  solve(no, totSumToGet, n-1);
+
+            mat[n][totSumToGet] = (profit1 || profit2);
+            return max(profit1,profit2);
+        }
+
+        // if weight itself is greater than bag weight
+        else {
+            profit3 = solve(no, totSumToGet, n-1);
+            mat[n][totSumToGet] = profit3
+            return profit3;
+        }
+    }
+
+}
