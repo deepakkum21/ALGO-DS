@@ -12,7 +12,7 @@ solve(int[] wt, int []val, int sacWt, int noOfEle) {
         return mat[n][sacWt];
     }
 
-    if(wt[n-1]>=sacWt) {
+    if(wt[n-1]<=sacWt) {
         // then we have two options either to include the weight of n-1 element or not
 
         // if wight added
