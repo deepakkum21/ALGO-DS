@@ -1,0 +1,34 @@
+create mat[n+1][sacWt+1];
+
+and initialize the mat with -1
+
+solve(int[] wt, int []val, int sacWt, int noOfEle) {
+
+    if(sacWt==0 || noOfEle==0) {
+        return 0;
+    }
+
+    if(mat[n][sacWt] != 0) {
+        return mat[n][sacWt];
+    }
+
+    if(wt[n-1]>=sacWt) {
+        // then we have two options either to include the weight of n-1 element or not
+
+        // if wight added
+        profit1 =  val[n-1] + (solve(wt, val, sacWt-wt[n-1], n-1));
+
+        // if not included the weight
+        profit2 =  solve(wt, val, sacWt, n-1);
+
+        mat[n][sacWt] = max(profit1,profit2);
+        return max(profit1,profit2);
+    }
+
+    // if weight itself is greater than bag weight
+    else {
+        profit3 = solve(wt, val, sacWt, n-1);
+        mat[n][sacWt] = profit3
+        return profit3;
+    }
+}
