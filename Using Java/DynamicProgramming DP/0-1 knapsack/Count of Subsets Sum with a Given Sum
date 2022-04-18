@@ -1,0 +1,56 @@
+Given an array arr[] of length N and an integer X, the task is to find the number of subsets with sum equal to X.
+Example:
+
+Input: arr[] = {1, 2, 3, 3}, X = 6
+Output: 3
+All the possible subsets are {1, 2, 3},
+{1, 2, 3} and {3, 3}
+
+============================================================
+
+create mat[n+1][totSumToGet+1];
+
+if(i =;i<n+1; i++) {
+    
+    if(j=0;j<totSumToGet+1; j++) {
+        // if an elemnt is not there but sum to get is >0 then 0 means not possible
+        if(i==0) {
+            mat[i][j] = 0;
+        }
+
+        // if an elemnt is there but sum to get is 0 then 1 means possible
+        if(j==0) {
+             mat[i][j] = 1;
+        }
+    }
+}
+
+solve(int[] no, int totSumToGet, int n) {
+
+    if (totSumToGet == 0)
+            return 1;
+ 
+        if (n <= 0)
+            return 0;
+
+
+    if(no[n-1]<=sacWt) {
+        // then we have two options either to include the  n-1 element or not
+
+        // if element added
+        value1 =  (solve(no, totSumToGet-wt[n-1], n-1));
+
+        // if not included the element
+        value2 =  solve(no, totSumToGet, n-1);
+
+        mat[n][totSumToGet] = (value1 + value2);
+        return value1 + value2;
+    }
+
+    // if weight itself is greater than bag weight
+    else {
+        value3 = solve(no, totSumToGet, n-1);
+        mat[n][totSumToGet] = value3
+        return value3;
+    }
+}
