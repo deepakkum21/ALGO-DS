@@ -1,6 +1,7 @@
 create mat[n+1][sacWt+1];
 
-and initialize the mat with -1
+and initialize the mat st row with 0
+and 1st col with 1
 
 solve(int[] wt, int []val, int sacWt, int noOfEle) {
 
