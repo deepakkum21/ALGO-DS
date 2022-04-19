@@ -1,0 +1,37 @@
+Given two strings ‘X’ and ‘Y’, find the length of the longest common substring.
+Examples:
+
+Input : X = “GeeksforGeeks”, y = “GeeksQuiz”
+Output : 5
+The longest common substring is “Geeks” and is of length 5.
+
+================================================================================================================
+
+Since only m & n are changing so mat[m+1][n+1]
+
+and initialize with -1
+
+int solve(String str1, String str2, n, m) {
+
+    if(n == 0 || m==0) {
+        return 0;
+    }
+
+    if(mat[m][n] != -1) {
+        return mat[m][n]
+    }
+
+    if(str1[m-1]== str2[n-1]) {
+        if(mat[m-1][n-1] == -1) {
+            value = solve(str1, str2, m-1, n-1)
+        }
+        mat[m][n] = 1 + value
+        return mat[m][n];
+    }
+
+    else {
+        // since its a substring so if one char (i) is not matching with another string one char(i) then start fresh
+        mat[m][n] = 0
+       return  mat[m][n];
+    }
+}
