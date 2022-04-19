@@ -1,0 +1,8 @@
+Count the number of subset with a given difference
+
+Subset1 - Subset2 = dif -----1
+subset1 + subset2 = sumofarray -----2
+----------------------------------------------------------------
+subset1 = (dif + sum)/2
+
+now the problem is same as count subsets sum with given sum
