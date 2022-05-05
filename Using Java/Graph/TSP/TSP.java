@@ -59,5 +59,6 @@ class TSPExample {
 
         // print the minimum weighted Hamiltonian Cycle
         System.out.println(tspCycle);
+        sc.close();
     }
 }
