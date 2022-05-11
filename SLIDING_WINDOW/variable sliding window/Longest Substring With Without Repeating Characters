@@ -19,8 +19,8 @@ while(j < s.length ) {
 	else if(map.size() < j-i+1) {
 		while(map.size() < j-i+1) {
 			map[s[i]]--;
-			if(map[s[i]==0) {
-				map.remove[s[i]];
+			if(map[s[i]]==0) {
+				map.remove(s[i]);
 			}
 			i++
 		}
