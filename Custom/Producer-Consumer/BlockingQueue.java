@@ -24,6 +24,34 @@ public class Main {
         Thread pThread = new Thread(p1);
         Thread cThread = new Thread(c1);
 
+        final Runnable prod = () -> {
+            while (true) {
+                try {
+                    bqueue.put(5);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        final Runnable consumer = () -> {
+            while (true) {
+                try {
+                    bqueue.take();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        // Create 1 thread each for producer
+        // and consumer and pass them their
+        // respective objects.
+        Thread p1Thread = new Thread(prod);
+        Thread c1Thread = new Thread(consumer);
+        p1Thread.start();
+        c1Thread.start();
+
         // Start both threads
         pThread.start();
         cThread.start();
